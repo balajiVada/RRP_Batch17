@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stego Audio</title>
+    <style>
+        body {
+            background: #1e1e1e; /* Dark background */
+            color: #87CEFA; /* Light blue text color */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #87CEFA; /* Light blue text color */
+            margin-bottom: 20px;
+            font-size: 80px;
+            font-size: 90px;
+        }
+
+        button {
+            background: #2e2e2e;
+            color: #87CEFA; /* Light blue text color */
+            border: none;
+            border-radius: 12px;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            box-shadow: 4px 4px 8px #141414, -4px -4px 8px #383838; /* Neumorphism effect */
+            box-shadow: 4px 4px 8px #0f0f0f, -4px -4px 8px #1e1e1e;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            box-shadow: inset 4px 4px 8px #141414, inset -4px -4px 8px #383838; /* Inset shadow on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stego Audio</h1>
+        <button onclick="window.open('/hideWave', '_blank')">HideWave</button>
+        <button onclick="window.open('/exWave', '_blank')">ExWave</button>
+    </div>
+</body>
+</html>

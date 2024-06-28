@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HideWave</title>
+    <style>
+        body {
+            background: #1e1e1e; /* Dark background */
+            color: #87CEFA; /* Light blue text color */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 4px 4px 8px #141414, -4px -4px 8px #383838; /* Neumorphism effect */
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            color: #87CEFA; /* Light blue text color */
+            margin-bottom: 40px;
+            font-size: 2em; /* Increased font size */
+            font-size: 50px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 10px;
+            color: #87CEFA; /* Light blue text color */
+            font-size: 1.1em; /* Increased font size */
+        }
+
+        input[type="file"], input[type="text"] {
+            background: #2e2e2e;
+            color: #87CEFA; /* Light blue text color */
+            border: none;
+            border-radius: 12px;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-shadow: inset 4px 4px 8px #141414, inset -4px -4px 8px #383838; /* Neumorphism effect */
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1em; /* Increased font size */
+        }
+
+        button {
+            background: #2e2e2e;
+            color: #87CEFA; /* Light blue text color */
+            border: none;
+            border-radius: 12px;
+            padding: 15px 30px;
+            font-size: 1.2em; /* Increased font size */
+            margin: 20px 0;
+            cursor: pointer;
+            box-shadow: 4px 4px 8px #141414, -4px -4px 8px #383838; /* Neumorphism effect */
+            box-shadow: 4px 4px 8px #0f0f0f, -4px -4px 8px #1e1e1e;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            box-shadow: inset 4px 4px 8px #141414, inset -4px -4px 8px #383838; /* Inset shadow on hover */
+        }
+
+
+
+        .result h3 {
+            color: #87CEFA; /* Light blue text color */
+            color: #82d682 ;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 22px; /* Increased font size */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HideWave</h1>
+        <form action="/hide_message" method="post" enctype="multipart/form-data">
+            <label for="audiofile">Select Audio File:</label>
+            <input type="file" name="audiofile" id="audiofile" required>
+            <label for="secretmsg">Enter Secret Message:</label>
+            <input type="text" autocomplete="off" name="secretmsg" id="secretmsg" required>
+            <button type="submit">Hide Text</button>
+        </form>
+        {% if result %}
+        <div class="result">
+            <h3>{{ result }}</h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
